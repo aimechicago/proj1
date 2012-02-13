@@ -1,0 +1,62 @@
+Aime Ngongang
+Login: CS61C-kh
+
+
+		Project1- Part2
+
+1- 
+a- 6 clusters : 46 min ,3 seconds with 20 reduce tasks
+b- 9 clusters : 43 min 42 seconds with 20 reduce tasks
+c- 12 clusters: 29 min 2 seconds  with 40 reduce tasks
+
+2- 
+	a) 50th percentile : 4
+	b) 9oth percentile :4
+	c) 95th percentile :5
+
+3-
+
+	a) 6 clusters  : 13.47 MB/second
+
+	b) 9 clusters  : 14.19  MB/second
+	
+	c) 12 clusters : 21.37 MB/second
+
+
+4- According to the previous result, one can see that the speed up of 9 and 12 clusters was faster than the one of 6 clusters.
+ 
+  However, the speed of 12 is much faster also because I doubled the amount of reduce task (from 20 to 40). This is a confirmation
+
+ that hadoop parellilazation enables program to work faster while adding more computers together. While waiting for the computer
+
+ speed to increase, hadoop system will be very beneficial in order to run very long application. This a "strong scaling" since
+
+ by adding more computers we have seen how faster the algorithm has been on the same set of data. If we draw a graph of speed vs number of clusters,
+
+we will obtain an increasing monotnic curve, which implies that under parallelization, as the number of  computer increases,the speed of the
+
+algorithm increases.
+
+
+5- The combiner is an intermediary step between the map and the reduce.Its role is to aggregate all the intermediate outputs and compresses 
+
+them which reduces the amount ofdata transferred between Mapper and Reducer. Its inclusion  does not affect performance much.
+
+ I couldn't have used a combiner in the other mapreduces because if the keys are unique
+
+   and are going to be reduced by different reducer functions, it doesn't make sense to combine the output of the mapper together
+ 
+It wouldn't have changed that much on how the file would be compressed.
+
+
+6 -
+   a) 6 clusters : (0.68 * 6)/ (20.77 GB) = $ 0.19/GB
+
+   b) 9 clusters : (0.68*9)/(20.77 GB) =   $ 0.29/GB
+   
+  c) 12 clusters : (0.68*12)/(20.77 GB)=  $ 0.39/GB
+
+
+7-
+  Credit used:
+ (0.68 * 6) + (0.68*9) +  (0.68*12) = $ 18.36 = $ 19
